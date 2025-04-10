@@ -1,0 +1,24 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  url: string;
+}
+
+// import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const { image, name, url } = Astro.props;
+---
+
+<a class="decoration-transparent" href={url} target="_blank" rel="noreferrer">
+  <span
+    title=`${name}`
+    class="flex justify-center items-center gap-1 p-2 border-[1px] border-dark hover:border-accent rounded-lg w-24 h-10 font-source-sans text-dark hover:text-accent text-sm cursor-pointer list-none"
+  >
+    <Icon name={image} size="22" />
+    {name}
+  </span>
+</a>
+
+<!-- class="flex items-center gap-1 p-2 border-[2px] border-dark hover:border-accent rounded-lg h-10 text-dark hover:text-accent cursor-pointer list-none" -->
