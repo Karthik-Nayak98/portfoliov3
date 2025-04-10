@@ -1,0 +1,69 @@
+---
+import navItems from "../data/navitems.json";
+---
+
+<nav
+  class="top-0 z-20 sticky bg-gray-50 dark:bg-gray-900 mx-auto mb-2 md:px-12 lg:px-16 border-dark border-b-[1px] w-full max-w-7xl font-source-sans"
+>
+  <div class="flex flex-wrap justify-between items-center mx-auto py-4">
+    <a
+      href="/"
+      class="px-4 md:px-0 font-lora font-bold text-gray-900 dark:text-white text-2xl"
+    >
+      Karthik Nayak
+    </a>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="md:hidden inline-flex justify-center items-center hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600 w-10 h-10 text-gray-500 dark:text-gray-400"
+      aria-controls="navbar-menu"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        viewBox="0 0 17 14"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+
+    <div id="navbar-menu" class="hidden md:block w-full md:w-auto">
+      <ul
+        class="flex md:flex-row flex-col md:space-x-8 bg-gray-50 md:bg-transparent md:dark:bg-gray-900 dark:bg-gray-800 md:mt-0 md:p-0 px-2 border border-gray-100 md:border-0 dark:border-gray-700 rounded-lg"
+      >
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.path}
+                class="block md:hover:bg-transparent md:dark:hover:bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 md:p-0 px-3 py-2 rounded-md text-gray-800 md:hover:text-accent dark:text-white"
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("navbar-menu");
+
+  toggle?.addEventListener("click", () => {
+    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", !isExpanded);
+    menu.classList.toggle("hidden");
+  });
+</script>
