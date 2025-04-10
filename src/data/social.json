@@ -1,0 +1,27 @@
+[
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/karthiknayak98/",
+    "image": "linkedin"
+  },
+  {
+    "name": "Twitter",
+    "url": "https://www.twitter.com/karthiknayak98/",
+    "image": "twitter"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://www.github.com/karthik-nayak98/",
+    "image": "github"
+  },
+  {
+    "name": "Gmail",
+    "url": "mailto:nayakkarthik466@gmail.com",
+    "image": "gmail"
+  },
+  {
+    "name": "Stack Overflow",
+    "url": "mailto:nayakkarthik466@gmail.com",
+    "image": "stackoverflow"
+  }
+]
