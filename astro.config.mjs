@@ -1,0 +1,15 @@
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
+
+import icon from "astro-icon";
+
+import db from "@astrojs/db";
+
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
+export default defineConfig({
+  site: "https://karthiknayak.in",
+  integrations: [tailwind(), mdx(), icon(), db(), sitemap()],
+});
