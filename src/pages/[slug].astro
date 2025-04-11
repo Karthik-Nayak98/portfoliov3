@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import ViewCounter from "../components/ViewCounter.astro";
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      post,
+    },
+  }));
+  return paths;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const slug = Astro.params.slug;
+---
+
+<Layout title={post.data.title}>
+  <div
+    class="flex md:flex-row flex-col md:justify-between md:items-center gap-3"
+  >
+    <h2 class="font-inter font-semibold text-dark dark:text-light text-4xl">
+      {post.data.title}
+    </h2>
+    <span class="flex gap-4">
+      <span class="text-dark dark:text-light text-sm">{post.data.date}</span>
+      <ViewCounter slug={slug} />
+    </span>
+  </div>
+  <article
+    class="mt-5 max-w-none font-assistant dark:text-light prose-headings:dark:text-light prose-strong:dark:text-light leading-normal prose dark:prose-dark"
+  >
+    <Content />
+  </article>
+</Layout>
