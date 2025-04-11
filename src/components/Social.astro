@@ -13,7 +13,7 @@ const { image, name, url } = Astro.props;
 <a class="decoration-transparent" href={url} target="_blank" rel="noreferrer">
   <span
     title=`${name}`
-    class="flex justify-center items-center gap-1 p-2 border-[1px] border-dark hover:border-accent rounded-lg min-w-24 h-10 font-source-sans text-dark hover:text-accent text-sm cursor-pointer list-none"
+    class="flex justify-center items-center gap-1 p-2 border-[1px] border-dark hover:border-accent dark:border-light rounded-lg min-w-24 h-10 font-assistant text-dark hover:text-accent dark:text-light text-sm cursor-pointer list-none"
   >
     <Icon name={image} size="22" />
     {name}
