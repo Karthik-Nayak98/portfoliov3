@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
+
+type Props = {
+  posts: CollectionEntry<"posts">[];
+};
+
+const posts = (await getCollection("posts"))
+  .map((post) => ({
+    ...post,
+    data: {
+      ...post.data,
+      date: new Date(post.data.date).valueOf(),
+    },
+  }))
+  .sort((a, b) => b.data.date - a.data.date);
+---
+
+<Layout title="Blog | Karthik Nayak">
+  <Header title="Blogs" />
+  {
+    posts.map((post) => (
+      <Card
+        href={post.slug}
+        title={post.data.title}
+        excerpt={post.data.excerpt}
+        date={post.data.date}
+        slug={post.slug}
+      />
+    ))
+  }
+</Layout>
