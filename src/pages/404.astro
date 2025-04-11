@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Error 404">
+  <section class="md:px-0">
+    <h2 class="my-4 font-lora font-medium dark:text-light text-lg md:text-xl">
+      Oops!! We can't find that page.
+    </h2>
+    <div class="text-dark dark:text-light">
+      The page you are looking for does not exist. You may have mistyped the
+      address or the page may have moved. But you can click the button below to
+      go back to the homepage.
+      <a href="/">
+        <button
+          class="flex items-center gap-1 mx-auto my-4 px-4 py-2 border-[1px] border-dark hover:border-accent dark:border-light rounded-lg font-medium text-dark-accent hover:text-accent dark:text-light text-sm capitalize"
+        >
+          Go back
+          <span>&rarr;</span>
+        </button>
+      </a>
+    </div>
+  </section>
+</Layout>
