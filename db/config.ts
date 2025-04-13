@@ -11,6 +11,14 @@ const Views = defineTable({
   },
 });
 
+export const config = {
+  client: {
+    url: import.meta.env.ASTRO_DB_REMOTE_URL,
+    authToken: import.meta.env.ASTRO_DB_APP_TOKEN,
+  },
+};
+
+
 export default defineDb({
   tables: { Views },
 });
