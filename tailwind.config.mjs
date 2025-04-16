@@ -9,10 +9,10 @@ export default {
       },
       colors: {
         accent: "#2563eb",
-        secondary: "#f3f4f6",
         dark: "#111827",
         light: "#D9EAFD",
-        primary: "#9AA6B2",
+        tertiary: "#64717C",
+        secondary: "#f3f4f6",
       },
     },
     fontFamily: {
