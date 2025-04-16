@@ -8,12 +8,14 @@
     "build": "astro check && astro build --remote",
     "preview": "astro preview",
     "astro": "astro",
-    "db": "astro db push --remote"
+    "db": "astro db push --remote",
+    "db-dev": "astro dev --remote"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
     "@astrojs/db": "^0.14.10",
     "@astrojs/mdx": "^4.2.3",
+    "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^8.1.3",
