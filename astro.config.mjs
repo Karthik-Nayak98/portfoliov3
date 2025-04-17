@@ -10,7 +10,18 @@ import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   site: "https://karthiknayak.in",
-  integrations: [tailwind(), mdx(), icon(), db(), sitemap()],
+  integrations: [
+    tailwind(),
+    mdx(),
+    icon(),
+    db(),
+    sitemap(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
   output: "server",
   adapter: vercel(),
 });
