@@ -2,8 +2,8 @@
 // Used to pre render these server rendered routes.
 export const prerender = true;
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import ViewCounter from "../components/ViewCounter.astro";
+import Layout from "../../layouts/Layout.astro";
+import ViewCounter from "../../components/ViewCounter.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
