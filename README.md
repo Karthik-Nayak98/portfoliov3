@@ -1,6 +1,6 @@
 # Portfolio
 
-This is my personal portfolio
+🔗 Discover my projects, blog posts, and professional journey at [karthiknayak.in](https://karthiknayak.in)
 
 ![GitHub deployments](https://img.shields.io/github/deployments/karthik-nayak98/portfoliov3/production?label=vercel&logo=vercel&logoColor=white)
 [![GitHub stars](https://img.shields.io/github/stars/Karthik-Nayak98/portfoliov3)](https://github.com/Karthik-Nayak98/portfoliov3/stargazers)
