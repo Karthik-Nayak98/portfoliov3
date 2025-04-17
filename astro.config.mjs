@@ -6,6 +6,7 @@ import icon from "astro-icon";
 import db from "@astrojs/db";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
