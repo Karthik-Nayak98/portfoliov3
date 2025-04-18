@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-
+import { rssSchema } from '@astrojs/rss';
 
 // 2. Define a `type` and `schema` for each collection
 const postCollection = defineCollection({
@@ -12,9 +12,15 @@ const postCollection = defineCollection({
   }),
 });
 
+
+const blog = defineCollection({
+  schema: rssSchema,
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   posts: postCollection,
+  blog: blog
 };
 
 
