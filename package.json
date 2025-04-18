@@ -16,6 +16,7 @@
     "@astrojs/db": "^0.14.10",
     "@astrojs/mdx": "^4.2.3",
     "@astrojs/partytown": "^2.1.4",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^8.1.3",
