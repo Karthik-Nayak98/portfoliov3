@@ -91,5 +91,3 @@ In this article, we learned about the key principles on which ReactJs works they
 * Everything is a component
 * One-way data flow
 * It is just a UI library
-
-Thanks for Reading
