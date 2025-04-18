@@ -1,7 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <footer
-  class="mx-auto mb-4 px-4 md:px-12 lg:px-16 max-w-7xl font-assistant text-dark dark:text-light text-sm md:text-left text-center"
+  class="flex justify-between mx-auto mb-4 px-4 md:px-12 lg:px-16 max-w-7xl font-assistant text-dark dark:text-light text-sm md:text-left text-center"
 >
   <span>
     © {new Date().getFullYear()} Karthik Nayak
   </span>
+  <a
+    target="_blank"
+    rel="noreferrer"
+    href="/rss.xml"
+    class="flex items-center gap-1 hover:text-accent text-center decoration-transparent cursor pointer"
+  >
+    <Icon name="rss" size="18" />
+    <span>RSS</span>
+  </a>
 </footer>
