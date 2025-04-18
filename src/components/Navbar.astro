@@ -8,7 +8,7 @@ import navItems from "../data/navitems.json";
   <div class="flex flex-wrap justify-between items-center mx-auto py-4">
     <a
       href="/"
-      class="px-4 md:px-0 font-lora font-bold text-dark hover:text-accent dark:text-light text-2xl hover:underline"
+      class="md:px-0 font-lora font-bold text-dark hover:text-accent dark:text-light text-2xl hover:underline"
     >
       Karthik Nayak
     </a>
@@ -95,26 +95,26 @@ import navItems from "../data/navitems.json";
       </button>
     </section>
   </div>
+
+  <script is:inline>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("navbar-menu");
+
+    toggle?.addEventListener("click", () => {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", !isExpanded);
+      menu.classList.toggle("hidden");
+    });
+
+    // Toggle between light and dark mode.
+    document.getElementById("theme-selector")?.addEventListener("click", () => {
+      if (localStorage.theme === "dark") {
+        localStorage.theme = "light";
+        document.documentElement.classList.remove("dark");
+      } else {
+        localStorage.theme = "dark";
+        document.documentElement.classList.add("dark");
+      }
+    });
+  </script>
 </nav>
-
-<script is:inline>
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("navbar-menu");
-
-  toggle?.addEventListener("click", () => {
-    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", !isExpanded);
-    menu.classList.toggle("hidden");
-  });
-
-  // Toggle between light and dark mode.
-  document.getElementById("theme-selector")?.addEventListener("click", () => {
-    if (localStorage.theme === "dark") {
-      localStorage.theme = "light";
-      document.documentElement.classList.remove("dark");
-    } else {
-      localStorage.theme = "dark";
-      document.documentElement.classList.add("dark");
-    }
-  });
-</script>
