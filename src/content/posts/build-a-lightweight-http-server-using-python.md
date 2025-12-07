@@ -72,7 +72,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
 If we send a raw tcp connection using telnet we get the following result.
 
 <video controls loop autoplay muted>
-  <source src="../src/assets/blog/basic_server.mp4" type="video/mp4">
+  <source src="../../assets/blog/basic_server.mp4" type="video/mp4">
 </video>
 
 We just start the server in one windows which will be listening at port 8080. In the other window we first connect to the server using the telnet command. Then we send a **GET** request to the server. The server responds with generic hardcoded response for the all the clients.
