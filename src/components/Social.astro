@@ -10,7 +10,13 @@ import { Icon } from "astro-icon/components";
 const { image, name, url } = Astro.props;
 ---
 
-<a class="decoration-transparent" href={url} target="_blank" rel="noreferrer">
+<a
+  class="decoration-transparent"
+  href={url}
+  target="_blank"
+  rel="noreferrer"
+  aria-label={`Visit ${name} profile (opens in new tab)`}
+>
   <span
     title=`${name}`
     class="flex justify-center items-center gap-1 p-2 border-[1px] border-dark hover:border-accent dark:border-light rounded-lg min-w-24 h-10 font-assistant text-dark hover:text-accent dark:text-light text-sm cursor-pointer list-none"
