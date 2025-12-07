@@ -13,7 +13,7 @@ export const GET: APIRoute = async (context) => {
       title: "Karthik's personal blog",
       description:
         "I'm a software engineer passionate about solving real-world problems through code. I love writing technical blogs where I share insights, tutorials, and experiences from the world of web development, DevOps, and automation.",
-      site: context.site,
+      site: context.site ?? "https://karthik.nayak.in",
       items: posts
         .sort((a, b) => {
           try {
@@ -27,7 +27,7 @@ export const GET: APIRoute = async (context) => {
           title: post.data.title,
           description: post.data.excerpt,
           link: `/blogs/${post.slug}`,
-          pubDate: post.data.date,
+          pubDate: new Date(post.data.date),
           author: post.data.author,
         })),
       customData: `<language>en</language>`,
