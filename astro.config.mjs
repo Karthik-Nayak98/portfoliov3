@@ -25,4 +25,12 @@ export default defineConfig({
   ],
   output: "server",
   adapter: vercel(),
+  security: {
+    checkOrigin: true,
+  },
+  vite: {
+    define: {
+      __DATE__: `'${new Date().toISOString()}'`,
+    },
+  },
 });
