@@ -2,8 +2,16 @@
 import navItems from "../data/navitems.json";
 ---
 
+<!-- Skip to content link for accessibility -->
+<a
+  href="#skip-to-content"
+  class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-accent text-light px-4 py-2 rounded-md z-50"
+>
+  Skip to content
+</a>
+
 <nav
-  class="top-0 z-20 sticky bg-secondary dark:bg-dark mx-auto mb-2 px-4 md:px-12 lg:px-16 border-dark border-b-[1px] dark:border-light w-full max-w-7xl font-assistant"
+  class="top-0 z-20 sticky bg-secondary dark:bg-dark mx-auto mb-2 px-4 md:px-12 lg:px-16 border-dark border-b-[1px] dark:border-light w-full max-w-7xl font-body"
 >
   <div class="flex flex-wrap justify-between items-center mx-auto py-4">
     <a
@@ -37,7 +45,6 @@ import navItems from "../data/navitems.json";
         </svg>
       </button>
 
-      <!-- <div id="navbar-menu" class="hidden md:block w-full md:w-auto"> -->
       <div
         id="navbar-menu"
         class="hidden md:block top-full left-0 z-50 absolute md:relative w-full md:w-auto text-dark dark:text-light"
@@ -63,6 +70,7 @@ import navItems from "../data/navitems.json";
         type="button"
         id="theme-selector"
         class="bg-gray-500 dark:bg-light bg-opacity-10 dark:bg-opacity-10 p-2 rounded-lg text-dark dark:text-light"
+        aria-label="Toggle between light and dark theme"
       >
         <svg
           id="theme-toggle-dark-icon"
@@ -96,25 +104,37 @@ import navItems from "../data/navitems.json";
     </section>
   </div>
 
-  <script is:inline>
-    const toggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("navbar-menu");
+  <script>
+    // Menu toggle functionality
+    function initMenuToggle() {
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("navbar-menu");
 
-    toggle?.addEventListener("click", () => {
-      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", !isExpanded);
-      menu.classList.toggle("hidden");
-    });
+      if (!toggle || !menu) return;
 
-    // Toggle between light and dark mode.
-    document.getElementById("theme-selector")?.addEventListener("click", () => {
+      toggle.addEventListener("click", () => {
+        const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", (!isExpanded).toString());
+        menu.classList.toggle("hidden");
+      });
+    }
+
+    // Toggle between light and dark mode
+    function toggleTheme() {
+      const html = document.documentElement;
       if (localStorage.theme === "dark") {
         localStorage.theme = "light";
-        document.documentElement.classList.remove("dark");
+        html.classList.remove("dark");
       } else {
         localStorage.theme = "dark";
-        document.documentElement.classList.add("dark");
+        html.classList.add("dark");
       }
-    });
+    }
+
+    // Initialize menu toggle functionality
+    initMenuToggle();
+
+    // Initialize theme toggle
+    document.getElementById("theme-selector")?.addEventListener("click", toggleTheme);
   </script>
 </nav>
