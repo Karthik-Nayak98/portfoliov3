@@ -71,9 +71,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
 
 If we send a raw tcp connection using telnet we get the following result.
 
-<video controls loop autoplay muted>
-  <source src="../../assets/blog/basic_server.mp4" type="video/mp4">
-</video>
+![Telnet Gif](https://private-user-images.githubusercontent.com/39642646/523488455-46558503-a342-47f5-9361-e217adc32f29.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjUxMzA5MjQsIm5iZiI6MTc2NTEzMDYyNCwicGF0aCI6Ii8zOTY0MjY0Ni81MjM0ODg0NTUtNDY1NTg1MDMtYTM0Mi00N2Y1LTkzNjEtZTIxN2FkYzMyZjI5LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjA3VDE4MDM0NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY5NDJhNTVhYjViYTYwZTNlYzhmN2YxODdmYmRhZDBiYTlhZGE2YmFjMDY5OGUwYWIwYmM3NzZkMzc5ODI2NDYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.xeyOrWz569opjvUqKr8r1PB-4BDiZEz4jPmad88WFf0)
 
 We just start the server in one windows which will be listening at port 8080. In the other window we first connect to the server using the telnet command. Then we send a **GET** request to the server. The server responds with generic hardcoded response for the all the clients.
 
