@@ -13,14 +13,9 @@ const postCollection = defineCollection({
 });
 
 
-const blog = defineCollection({
-  schema: rssSchema,
-});
-
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   posts: postCollection,
-  blog: blog
 };
 
 
