@@ -7,16 +7,23 @@ import social_data from "../data/social.json";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Karthik Nayak">
+<Layout
+  title="Karthik Nayak - Software & Cloud DevOps Engineer"
+  description="Portfolio of Karthik Nayak, a Software & Cloud DevOps Engineer specializing in cloud automation, infrastructure optimization, and web development."
+  image="/karthik.webp"
+>
   <section
-    class="flex flex-col justify-center md:justify-around lg:justify-center items-center gap-5 px-4 md:px-0 font-300 font-assistant text-dark dark:text-light"
+    class="flex flex-col justify-center md:justify-around lg:justify-center items-center gap-5 px-4 md:px-0 font-normal font-body text-dark dark:text-light"
   >
     <Image
       class="rounded-full w-48 md:w-64 h-48 md:h-64 object-cover"
       src={karthik}
-      alt="Karthik Nayak"
-      loading="lazy"
+      alt="Karthik Nayak - Software & Cloud DevOps Engineer"
+      loading="eager"
       format="webp"
+      quality="high"
+      width={256}
+      height={256}
     />
     <section>
       <article
