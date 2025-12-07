@@ -1,30 +1,26 @@
 ---
-// Used to pre render these server rendered routes.
-export const prerender = true;
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ViewCounter from "../../components/ViewCounter.astro";
+import { formatDate } from "../../utils/date";
 
-export const getStaticPaths = async () => {
-  const posts = await getCollection("posts");
-
-  const paths = posts.map((post) => ({
-    params: {
-      slug: post.slug,
-    },
-    props: {
-      post,
-    },
-  }));
-  return paths;
-};
-
-const { post } = Astro.props;
-const { Content } = await post.render();
 const slug = Astro.params.slug;
+
+// Get the post from the collection based on the slug
+const posts = await getCollection("posts");
+const post = posts.find(p => p.slug === slug);
+
+if (!post) {
+  throw new Error(`Post with slug "${slug}" not found`);
+}
+
+const { Content } = await post.render();
 ---
 
-<Layout title={post.data.title}>
+<Layout
+  title={`${post.data.title} | Karthik Nayak`}
+  description={post.data.excerpt}
+>
   <div
     class="flex md:flex-row flex-col md:justify-between md:items-center gap-3"
   >
@@ -32,12 +28,11 @@ const slug = Astro.params.slug;
       {post.data.title}
     </h2>
     <span class="flex gap-4">
-      <span class="text-dark dark:text-light text-sm">{post.data.date}</span>
-      <!-- <ViewCounter slug={slug} /> -->
+      <span class="text-dark dark:text-light text-sm">{formatDate(post.data.date)}</span>
     </span>
   </div>
   <article
-    class="my-5 max-w-none font-assistant dark:text-light prose-headings:dark:text-light prose-strong:dark:text-light leading-normal prose dark:prose-dark"
+    class="my-5 max-w-none font-body dark:text-light prose-a:text-accent prose-headings:dark:text-light prose-strong:dark:text-light prose dark:prose-dark leading-normal"
   >
     <Content />
   </article>
