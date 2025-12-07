@@ -9,13 +9,17 @@ export default {
       },
       colors: {
         accent: "#2563eb",
-        dark: "#111827",
+        dark: "#0f1419", // Warmer, deeper dark background that complements blue
         light: "#D9EAFD",
         tertiary: "#64717C",
-        secondary: "#f3f4f6",
+        secondary: "#fafbfc", // Slightly warmer light background
       },
     },
     fontFamily: {
+      'body': ['"DM Sans"', 'system-ui', 'sans-serif'],
+      'heading': ['Lora', 'sans-serif'],
+      'mono': ['"JetBrains Mono"', 'monospace'],
+      // Keep old fonts as fallbacks
       inter: ["Inter", "sans-serif"],
       lora: ["Lora", "sans-serif"],
       lato: ["Lato", "sans-serif"],
